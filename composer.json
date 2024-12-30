@@ -1,0 +1,13 @@
+{
+  "name": "wzj177/webman-view-layout",
+  "type": "library",
+  "license": "MIT",
+  "description": "Webman plugin wzj177/webman-view-layout",
+  "require": {
+  },
+  "autoload": {
+    "psr-4": {
+      "Wzj177\\WebmanViewLayout\\": "src"
+    }
+  }
+}

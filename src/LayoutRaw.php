@@ -57,7 +57,10 @@ class LayoutRaw extends Raw
 
         $page_body_content = ob_get_clean();
         if ($layout) {
-            if (file_exists($layoutPath)) {
+            if (!is_file($layoutPath) && 'admin' !== $plugin) {
+                $layoutPath = base_path() . "/plugin/admin/app/view/$layout";
+            }
+            if (is_file($layoutPath)) {
                 preg_match_all('/<style.*?>(.*?)<\/style>/is', $page_body_content, $styleMatches);
                 preg_match_all('/<script\s+src=["\'](.*?)["\'].*?><\/script>/is', $page_body_content, $scriptMatches);
                 preg_match_all('/<link\s+rel=["\'].*?["\'].*?href=["\'](.*?)["\'].*?>/is', $page_body_content, $linkMatches);

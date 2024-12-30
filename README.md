@@ -5,8 +5,8 @@
 
 
 # 特性
--支持模板布局
--支持模板缓存
+- 支持模板布局
+- 支持模板缓存
 
 ## 使用
 
@@ -19,8 +19,14 @@ return [
 ];
 ```
 
-- 默认_layout.html模板文件放在`{resources}/views/_layout.html`(`app/view`或者`plugin/{name}/view`)
-## `_layout.html`demo
+- 新建_layout.html
+
+  默认_layout.html模板文件放在`{resources}/views/_layout.html`(`app/view`或者`plugin/{name}/view`)，demo参考下面。
+
+## 注意
+1. 如果应用插件里admin下的view目录下没有`_layout.html`模板文件，则默认使用webman admin 插件里的 `_layout.html`模板文件。如果都没有没有就使用原始的视图。
+
+## `_layout.html` demo
 ```html
 <!DOCTYPE html>
 <html lang="zh-cn">
